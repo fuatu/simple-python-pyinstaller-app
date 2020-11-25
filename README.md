@@ -33,3 +33,21 @@ to stop the containers and remove them
 $ docker-compose stop
 $ docker-compose rm
 ```
+
+# check binary
+this is the folder for the build
+/var/jenkins_home/workspace/simple-python-pyinstaller-app/{job number}/sources/dist
+```
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                      NAMES
+79ad23fffe71        docker_myjenkins    "/sbin/tini -- /usr/…"   21 minutes ago      Up 21 minutes       0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp           myjenkins
+a472183707a2        docker:dind         "dockerd-entrypoint.…"   24 minutes ago      Up 21 minutes       0.0.0.0:2376->2376/tcp, 2375/tcp, 0.0.0.0:3000->3000/tcp   jenkins-docker
+$ simple-python-pyinstaller-app git:(master) docker exec -itu 0 79a /bin/bash
+root@79ad23fffe71:/#
+root@79ad23fffe71:/# cd /var/jenkins_home/workspace/simple-python-pyinstaller-app/1/sources/dist
+root@79ad23fffe71:/# chmod +x add2vals
+root@79ad23fffe71:/# ./add2vals 4 5
+
+The result is 9
+
+```
