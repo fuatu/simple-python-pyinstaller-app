@@ -16,3 +16,20 @@ and execute at the command line on Linux machines without Python.
 
 The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
 you'll be creating yourself during the tutorial.
+
+## Changes
+- Added working Jenkinsfile to root
+- Removed jenkins folder
+- Added docker folder 
+
+## Docker compose
+create the containers and skip the "Setup Wizard" section in [Build a Python app with PyInstaller](https://jenkins.io/doc/tutorials/build-a-python-app-with-pyinstaller/)
+go to folder docker
+```
+$ docker-compose up -d 
+```
+to stop the containers and remove them
+```
+$ docker-compose stop
+$ docker-compose rm
+```
